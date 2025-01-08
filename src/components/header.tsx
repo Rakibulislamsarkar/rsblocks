@@ -29,8 +29,8 @@ export const Header = () => {
             </Link>
           ))}
         </div>
-        <div className="flex lg:justify-center">
-          <p className="font-semibold">TWBlocks.com</p>
+        <div className="flex lg:justify-center lg:items-center">
+          <p className="font-semibold">RSBlocks</p>
         </div>
         <div className="flex justify-end w-full gap-4">
           <Button
@@ -45,7 +45,7 @@ export const Header = () => {
           <Button
             className="gap-2"
             onClick={() => {
-              window.open("https://github.com/tommyjepsen/twblocks", "_blank");
+              window.open("https://github.com/Rakibulislamsarkar/rsblocks", "_blank");
             }}
           >
             Github <GithubIcon className="w-4 h-4" />

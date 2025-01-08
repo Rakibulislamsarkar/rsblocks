@@ -18,6 +18,7 @@ import { Headers } from "@/components/blocks/headers";
 export default function Home() {
   return (
     <>
+      <div className="px-4 sm:px-6 lg:px-8">
       <Header />
       <Hero />
       <Headers />
@@ -32,6 +33,7 @@ export default function Home() {
       <FAQs />
       <Contacts />
       <Footers />
+      </div>
     </>
   );
 }

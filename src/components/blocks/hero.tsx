@@ -28,7 +28,7 @@ export const Hero = () => (
             size="lg"
             className="gap-2"
             onClick={() => {
-              window.open("https://github.com/tommyjepsen/twblocks", "_blank");
+              window.open("https://github.com/Rakibulislamsarkar/rsblocks", "_blank");
             }}
           >
             Repo on Github <Github className="w-4 h-4" />
