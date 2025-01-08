@@ -1,6 +1,5 @@
 "use client";
 
-import { Hero4 } from "@/blocks/hero/hero4";
 import { Hero5 } from "@/blocks/hero/hero5";
 import { CopyCodeButton } from "@/components/copy-code-button";
 import {
@@ -107,7 +106,7 @@ export const Hero5 = () => {
 
   return (
     <div className="min-h-screen w-full flex flex-col">
-      <div className="bg-secondary mt-20 w-full">
+      <div className="mt-20 w-full">
         <div className="container items-center text-secondary-foreground text-sm text-center py-4 flex flex-row justify-between">
           <Breadcrumb>
             <BreadcrumbList>

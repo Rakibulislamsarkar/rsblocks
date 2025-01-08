@@ -1,7 +1,6 @@
-import { Github, MoveDown, MoveRight, PhoneCall } from "lucide-react";
+import { Github, MoveDown } from "lucide-react";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
-import Link from "next/link";
 
 export const Hero = () => (
   <div className="w-full">

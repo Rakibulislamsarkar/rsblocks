@@ -18,7 +18,7 @@ export const Header = () => {
   const [isOpen, setOpen] = useState(false);
 
   return (
-    <header className="w-full z-40 fixed top-0 left-0 bg-background">
+    <header className="w-full z-40 fixed top-0 left-0 bg-background px-5">
       <div className="container relative mx-auto min-h-20 flex gap-4 flex-row lg:grid lg:grid-cols-3 items-center">
         <div className="justify-start items-center gap-4 lg:flex hidden flex-row">
           {navigationItems.map((item) => (

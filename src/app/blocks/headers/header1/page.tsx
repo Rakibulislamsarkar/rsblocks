@@ -198,7 +198,7 @@ return (
 
   return (
     <div className="min-h-screen w-full flex flex-col">
-      <div className="bg-secondary mt-20 w-full">
+      <div className="mt-20 w-full">
         <div className="container items-center text-secondary-foreground text-sm text-center py-4 flex flex-row justify-between">
           <Breadcrumb>
             <BreadcrumbList>
