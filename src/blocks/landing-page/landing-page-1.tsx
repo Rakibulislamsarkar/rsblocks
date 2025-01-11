@@ -1,195 +1,309 @@
-'use client'
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { ArrowRight, CheckCircle, Laptop, Zap, Shield, ArrowDownToLine } from 'lucide-react'
-import { motion } from "framer-motion"
-import Image from "next/image"
+import { useState, memo } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowUpRight, LogIn, MoveRight } from "lucide-react";
+import { Twitter, Instagram, Linkedin, Github } from "lucide-react";
 
-export default function LandingPage1() {
-  const fadeIn = {
-    initial: { opacity: 0, y: 20 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.5 }
-  }
+// UI Components
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 
-  const features = [
-    {
-      icon: <Zap className="size-6" />,
-      title: "Lightning Fast",
-      description: "Built for speed and performance, delivering results in milliseconds."
-    },
-    {
-      icon: <Shield className="size-6" />,
-      title: "Secure by Default",
-      description: "Enterprise-grade security built into every layer of the platform."
-    },
-    {
-      icon: <Laptop className="size-6" />,
-      title: "Cross Platform",
-      description: "Work seamlessly across all your devices and platforms."
-    }
-  ]
+// Constants
+const FAQ_ITEMS = [
+  {
+    question: "What is Solaris and how can it help me?",
+    answer:
+      "Solaris brings the power of conversational AI to your documents, letting you chat with your PDFs as easily as using ChatGPT. Whether you're studying, researching, or analyzing documents, our platform helps you understand and extract information in seconds, backed up by the latest PDF AI technology.",
+  },
+  {
+    question: "Is Solaris free?",
+    answer:
+      "Absolutely! We offer a free plan that lets you analyze 5 documents every day. For power users, our Solaris Plus plan provides unlimited document analysis, and more advanced features.",
+  },
+  {
+    question: "Why use Solaris instead of ChatGPT for PDF analysis?",
+    answer:
+      "Solaris is purpose-built for document analysis with features you won't find in general AI tools. Our intuitive side-by-side interface displays your chat and document together, while clickable citations instantly scroll to the exact source in your PDF. This specialized design makes document understanding faster and more reliable than anywhere else.",
+  },
+  {
+    question: "Is my data secure and confidential?",
+    answer:
+      "We implement the highest security standards. Your documents are protected by SSL encryption during transfer and remain encrypted while stored. Our SOC2 Type II certified storage provider ensures enterprise-level security, while you maintain full control over your data - with the ability to delete your documents at any time.",
+  },
+];
 
+const USER_CARDS = [
+  {
+    title: "For Researchers",
+    description:
+      "Explore scientific papers, academic articles, and books to get the information you need for your research.",
+    image: "/researchers.png",
+  },
+  {
+    title: "For Students",
+    description:
+      "Study for exams, get help with homework, and answer multiple choice questions faster than your classmates.",
+    image: "/students.png",
+  },
+  {
+    title: "For Professionals",
+    description:
+      "Navigate legal contracts, financial reports, manuals, and training material. Ask questions to any PDF to stay ahead.",
+    image: "/professionals.png",
+  },
+];
+
+const UserCard = memo(function UserCard({
+  title,
+  description,
+  image,
+}: {
+  title: string;
+  description: string;
+  image: string;
+}) {
   return (
-    <div className="flex min-h-screen flex-col">
-      {/* Hero Section */}
-      <header className="px-4 lg:px-6 h-14 flex items-center">
-        <motion.div 
-          className="flex items-center gap-2 font-bold text-xl"
-          initial={{ opacity: 0, x: -20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="size-8 rounded-lg bg-primary flex items-center justify-center text-primary-foreground">S</div>
-          Startup
-        </motion.div>
-        <div className="ml-auto flex gap-4 sm:gap-6">
-          <Button variant="ghost">Features</Button>
-          <Button variant="ghost">Pricing</Button>
-          <Button>Get Started</Button>
-        </div>
-      </header>
+    <Card className="p-4 shadow-lg rounded-lg flex flex-col items-center text-center sm:text-left h-full">
+      <CardHeader>
+        <CardTitle className="text-2xl sm:text-xl">{title}</CardTitle>
+        <CardDescription className="text-base sm:text-sm">
+          {description}
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="flex-grow">
+        <Image
+          src={image}
+          alt={title.toLowerCase()}
+          width={400}
+          height={300}
+          className="shadow-xl w-full h-auto sm:w-3/4 lg:w-full object-cover rounded-lg"
+        />
+      </CardContent>
+    </Card>
+  );
+});
 
-      <main className="flex-1">
-        <section className="w-full py-12 md:py-24 lg:py-32 xl:py-48">
-          <div className="container px-4 md:px-6">
-            <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_600px]">
-              <motion.div 
-                className="flex flex-col justify-center space-y-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7 }}
-              >
-                <div className="space-y-2">
-                  <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl/none">
-                    Transform Your Business with AI-Powered Solutions
-                  </h1>
-                  <p className="max-w-[600px] text-gray-500 md:text-xl dark:text-gray-400">
-                    Harness the power of artificial intelligence to streamline your operations, boost productivity, and drive growth.
-                  </p>
-                </div>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                  <Button size="lg" className="bg-primary">
-                    Get Started
-                    <ArrowRight className="ml-2 size-5" />
-                  </Button>
-                  <Button size="lg" variant="outline">
-                    Learn More
-                  </Button>
-                </div>
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7 }}
-                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
-              >
-                <Image
-                  src="/placeholder.svg?height=550&width=550"
-                  width={550}
-                  height={550}
-                  alt="Hero"
-                  className="mx-auto aspect-video overflow-hidden rounded-xl object-cover"
-                />
-              </motion.div>
+const FAQSection = memo(function FAQSection() {
+  return (
+    <section className="min-h-screen flex items-center justify-center py-24">
+      <div className="mx-auto max-w-5xl w-full px-4">
+        <h1 className="text-3xl md:text-4xl font-soehne mb-12">
+          Frequently Asked Questions
+        </h1>
+        {FAQ_ITEMS.map((item, index) => (
+          <Accordion key={index} type="single" collapsible>
+            <AccordionItem value={`item-${index + 1}`}>
+              <AccordionTrigger>{item.question}</AccordionTrigger>
+              <AccordionContent>{item.answer}</AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        ))}
+      </div>
+    </section>
+  );
+});
+
+export default function Home() {
+  // Optimized Hero Section
+  const renderHero = () => (
+    <section className="flex flex-col gap-10 items-center text-center py-20 px-4">
+      <div className="flex flex-col items-center justify-center gap-4">
+        <Badge variant="outline">Solaris is now public</Badge>
+        <h1 className="max-w-6xl text-2xl md:text-5xl lg:text-[53.94px] leading-8 tracking-[-0.2px] sm:leading-[40px] md:tracking-[0.5px] md:leading-[50px] lg:tracking-[-2.0788px] lg:leading-[60.334px]">
+          Instant Conversations with Your Documents—Upload, Ask, and Discover
+          Answers Effortlessly
+        </h1>
+        <p className="text-base md:text-lg lg:text-xl tracking-[-0.2px] leading-[22px] font-[customFont] max-w-2xl">
+          Effortlessly explore insights and find the information you need in
+          seconds.
+        </p>
+      </div>
+      <div className="flex gap-6 md:gap-10 mt-5">
+        <Button className="cursor-pointer px-6 py-5" asChild>
+          <Link href="/dashboard">
+            Get Started
+            <LogIn className="ml-3" />
+          </Link>
+        </Button>
+
+        <Button
+          className="cursor-pointer px-6 py-5 hover:underline"
+          asChild
+          variant="outline"
+        >
+          <Link href="/upgrade">
+            Try Premium <MoveRight className="ml-3" />
+          </Link>
+        </Button>
+      </div>
+    </section>
+  );
+
+  // Optimized Product Preview Section
+  const renderProductPreview = () => (
+    <section className="min-h-screen flex items-center justify-center py-24">
+      <div className="relative isolate w-full">
+        <div className="mx-auto max-w-6xl px-6 lg:px-8">
+          <div className="mt-16 flow-root sm:mt-24">
+            <div className="-m-2 rounded-xl bg-secondary p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4 shadow-2xl">
+              <Image
+                src="/1.png"
+                alt="product preview"
+                width={1364}
+                height={866}
+                quality={100}
+                priority
+                className="rounded-md bg-white p-2 sm:p-8 md:p-20 shadow-2xl ring-1 ring-gray-900/10"
+              />
             </div>
           </div>
-        </section>
+          <p className="text-base md:text-2xl lg:text-[23.97px] md:tracking-[-0.13485px] md:leading-[28px] lg:tracking-[-0.13485px] lg:leading-[28px] tracking-[-0.3px] leading-[20px] mt-10 mb-10 font-[customFont] max-w-3xl mx-auto text-center">
+            Solaris empowers you to effortlessly extract insights from your
+            documents, enabling precise answers to your questions with unmatched
+            clarity and speed, thanks to its advanced AI-driven capabilities.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
 
-        {/* Features Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-900">
-          <motion.div 
-            className="container px-4 md:px-6"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                  Features
-                </div>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
-                  Everything you need to succeed
-                </h2>
-                <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                  Our platform provides all the tools you need to take your business to the next level.
-                </p>
-              </div>
-            </div>
-            <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-3 lg:gap-12">
-              {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  className="relative overflow-hidden rounded-lg border bg-white p-2 dark:bg-gray-950"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  whileHover={{ y: -5 }}
-                >
-                  <div className="flex h-[180px] flex-col justify-between rounded-md p-6">
-                    <div className="size-12 rounded-lg bg-gray-100 flex items-center justify-center dark:bg-gray-800">
-                      {feature.icon}
-                    </div>
-                    <div className="space-y-2">
-                      <h3 className="font-bold">{feature.title}</h3>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        </section>
+  return (
+    <main className="overflow-x-hidden">
+      {renderHero()}
+      {renderProductPreview()}
 
-        {/* CTA Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32">
-          <motion.div 
-            className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <div className="space-y-2">
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-                Ready to transform your business?
+      <section className="min-h-screen flex items-center justify-center py-24">
+        <div className="mx-auto max-w-5xl w-full px-4">
+          <div className="mb-12">
+            <div className="mx-auto max-w-2xl text-center">
+              <h2 className="mt-2 font-soehne text-4xl sm:text-5xl">
+                Get answers from your documents in seconds
               </h2>
-              <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Join thousands of companies already using our platform to grow their business.
+              <p className="mt-4 text-lg md:tracking-[-0.13485px] md:leading-[28px] lg:tracking-[-0.13485px] lg:leading-[34px] tracking-[-0.3px] leading-[22px] font-soehne">
+                Textify redefines how you chat with your PDF files—easy and
+                intuitive.
               </p>
             </div>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row lg:justify-end">
-              <Button size="lg" className="bg-primary">
-                Get Started
-                <ArrowRight className="ml-2 size-5" />
-              </Button>
-              <Button size="lg" variant="outline">
-                Contact Sales
+          </div>
+
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 justify-between">
+            {USER_CARDS.map((card, index) => (
+              <UserCard key={index} {...card} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <div className="bg-secondary rounded-lg mx-auto w-full max-w-4xl sm:max-w-2xl lg:max-w-5xl min-h-[400px] sm:min-h-[450px] md:min-h-[500px] px-4 lg:px-0 py-12 sm:py-16 md:py-20 flex items-center justify-center my-24">
+        <div className="w-full px-4 sm:px-6 md:px-8 lg:px-0">
+          <div className="col-span-12 flex flex-col gap-2 md:col-span-8 md:col-start-3">
+            <h2 className="font-medium text-xl sm:text-2xl md:text-[36px] leading-[32px] sm:leading-[36px] md:leading-[43.2px] tracking-[-0.2px] sm:tracking-[-0.3px] md:tracking-[-0.36px] mb-4 w-full sm:w-3/4 flex justify-center mx-auto text-center text-h4 text-balance font-[customFont]">
+              Instant answers. Greater productivity. Endless inspiration.
+            </h2>
+            <div className="flex items-center justify-center flex-row gap-1 sm:gap-2 md:gap-3 flex-wrap">
+              <Button
+                className="px-4 py-3 rounded-full text-base sm:text-sm font-medium"
+                asChild
+              >
+                <Link href="/dashboard" className="flex">
+                  Try Solaris <ArrowUpRight className="ml-2" size={18} />
+                </Link>
               </Button>
             </div>
-          </motion.div>
-        </section>
-      </main>
+          </div>
+        </div>
+      </div>
 
-      <footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-        <p className="text-xs text-gray-500 dark:text-gray-400">
-          © {new Date().getFullYear()} Startup Inc. All rights reserved.
-        </p>
-        <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-          <a className="text-xs hover:underline underline-offset-4" href="#">
-            Terms of Service
-          </a>
-          <a className="text-xs hover:underline underline-offset-4" href="#">
-            Privacy
-          </a>
-        </nav>
+      <FAQSection />
+
+      <footer className="border-t">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
+            <div>
+              <h2 className="text-lg font-semibold mb-6">Quick Links</h2>
+              <ul className="space-y-4">
+                {["Home", "About", "Services", "Contact"].map((item) => (
+                  <li key={item}>
+                    <Link
+                      href={`/${item.toLowerCase()}`}
+                      className="text-sm hover:text-gray-900 transition-colors"
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h2 className="text-lg font-semibold mb-6">Contact Us</h2>
+              <address className="not-italic text-sm space-y-4">
+                <p>123 Web Dev Lane,Internet City, Digital State 12345</p>
+                <p>Email: info@example.com</p>
+                <p>Phone: (123) 456-7890</p>
+              </address>
+            </div>
+            <div>
+              <h2 className="text-lg font-semibold mb-6">Legal</h2>
+              <ul className="space-y-4">
+                {[
+                  { label: "Privacy Policy", href: "/privacy" },
+                  { label: "Terms of Use", href: "/terms" },
+                  { label: "Brand Guidelines", href: "/brand" },
+                ].map((item) => (
+                  <li key={item.label}>
+                    <Link
+                      href={item.href}
+                      className="text-sm hover:text-gray-900 transition-colors"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <h2 className="text-lg font-semibold mb-6">Follow Us</h2>
+              <div className="flex space-x-4">
+                {[
+                  { icon: Twitter, label: "Twitter" },
+                  { icon: Instagram, label: "Instagram" },
+                  { icon: Linkedin, label: "LinkedIn" },
+                  { icon: Github, label: "GitHub" },
+                ].map(({ icon: Icon, label }) => (
+                  <a
+                    key={label}
+                    href="#"
+                    className="hover:text-gray-500 transition-colors"
+                    aria-label={label}
+                  >
+                    <Icon className="h-6 w-6" />
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className="mt-12 pt-8 border-t">
+            <p className="text-sm text-center">
+              © {new Date().getFullYear()} Solaris. All rights reserved.
+            </p>
+          </div>
+        </div>
       </footer>
-    </div>
-  )
+    </main>
+  );
 }
-
