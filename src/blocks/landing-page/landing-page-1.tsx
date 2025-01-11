@@ -221,7 +221,7 @@ export default function Home() {
                 asChild
               >
                 <Link href="/dashboard" className="flex">
-                  Try Solaris <ArrowUpRight className="ml-2" size={18} />
+                  Try app <ArrowUpRight className="ml-2" size={18} />
                 </Link>
               </Button>
             </div>
