@@ -195,8 +195,7 @@ export default function Home() {
                 Get answers from your documents in seconds
               </h2>
               <p className="mt-4 text-lg md:tracking-[-0.13485px] md:leading-[28px] lg:tracking-[-0.13485px] lg:leading-[34px] tracking-[-0.3px] leading-[22px] font-soehne">
-                Textify redefines how you chat with your PDF files—easy and
-                intuitive.
+                Lorem ipsum dolor sit amet. Consectetur adipiscing elit. In
               </p>
             </div>
           </div>
