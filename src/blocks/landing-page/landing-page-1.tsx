@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, memo } from "react";
+import { memo } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight, LogIn, MoveRight } from "lucide-react";
