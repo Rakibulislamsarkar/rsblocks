@@ -217,7 +217,7 @@ export default function LandingPage1() {
     <div className="min-h-screen w-full flex flex-col">
       <div className="w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50 fixed top-0 left-0">
         <div className="container flex justify-between items-center text-secondary-foreground text-sm py-4 px-6">
-          <Breadcrumb>
+          <Breadcrumb className="hidden lg:flex">
             <BreadcrumbList>
               <BreadcrumbItem>
                 <BreadcrumbLink asChild>
