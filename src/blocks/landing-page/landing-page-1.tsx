@@ -299,7 +299,7 @@ export default function Home() {
           </div>
           <div className="mt-12 pt-8 border-t">
             <p className="text-sm text-center">
-              © {new Date().getFullYear()} Solaris. All rights reserved.
+              © {new Date().getFullYear()} App name. All rights reserved.
             </p>
           </div>
         </div>
