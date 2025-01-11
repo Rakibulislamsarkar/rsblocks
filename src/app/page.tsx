@@ -14,6 +14,7 @@ import { FAQs } from "@/components/blocks/faqs";
 import { Contacts } from "@/components/blocks/contacts";
 import { Footers } from "@/components/blocks/footers";
 import { Headers } from "@/components/blocks/headers";
+import { LandingPage } from "@/components/blocks/landing-page";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
       <div className="px-4 sm:px-6 lg:px-8">
       <Header />
       <Hero />
+      <LandingPage />
       <Headers />
       <Heroes />
       <Cases />
