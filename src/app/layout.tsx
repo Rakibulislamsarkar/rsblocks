@@ -1,10 +1,11 @@
-
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import { Header } from "@/components/header";
 import { ModeToggle } from "@/components/ui/mode-toggle";
+import { MainNav } from "@/components/main-nav";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,7 +31,7 @@ export default function RootLayout({
         />
         <meta
           property="og:description"
-          content="Free SaaS website blocks based on React with shadcn & Tailwind"
+          content="Beautifully designed. Copy and paste into your apps. Open Source."
         />
         <meta
           property="og:image"
@@ -39,15 +40,15 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Header />
-          <ModeToggle />
-
-          {children}
+        attribute="class"
+        defaultTheme="system"
+        enableSystem
+        disableTransitionOnChange>
+        <div data-wrapper="" className="border-grid flex flex-1 flex-col px-4 ">
+          <SiteHeader />
+          <main className="flex flex-1 flex-col">{children}</main>
+          <SiteFooter />
+        </div>
         </ThemeProvider>
       </body>
     </html>
