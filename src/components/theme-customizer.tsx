@@ -1,17 +1,13 @@
 "use client"
 
 import * as React from "react"
-import { useTheme } from "next-themes"
-import { useConfig } from "@/hooks/use-config"
 import { Button } from "@/components/ui/button"
 import {
   Drawer,
-  DrawerContent,
   DrawerTrigger,
 } from "@/components/ui/drawer"
 import {
   Popover,
-  PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
 
@@ -19,8 +15,6 @@ import "@/styles/mdx.css"
 import Link from "next/link"
 
 export function ThemeCustomizer() {
-  const [config, setConfig] = useConfig()
-  const { resolvedTheme: mode } = useTheme()
   const [mounted, setMounted] = React.useState(false)
 
   React.useEffect(() => {

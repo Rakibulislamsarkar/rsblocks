@@ -1,8 +1,7 @@
 "use client"
 
 import * as React from "react"
-import Link from "next/link"
-import { ChevronRight, ExternalLink } from 'lucide-react'
+import { ChevronRight} from 'lucide-react'
 import Balancer from "react-wrap-balancer"
 
 import {
@@ -72,7 +71,7 @@ export default function Documentation() {
           <div className="space-y-6">
             <p className="leading-7">
               This is <span className="font-semibold">NOT</span> a component
-              library. It's a collection of re-usable components that you can copy
+              library. Its a collection of re-usable components that you can copy
               and paste into your apps.
             </p>
 

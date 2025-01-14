@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { Check, Plus, Send } from "lucide-react"
+import {Plus, Send } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import {
@@ -58,13 +58,13 @@ const users = [
     email: "will@email.com",
     avatar: "/avatars/04.png",
   },
-] as const
+]
 
 type User = (typeof users)[number]
 
 export function CardsChat() {
   const [open, setOpen] = React.useState(false)
-  const [selectedUsers, setSelectedUsers] = React.useState<User[]>([])
+  const [selectedUsers] = React.useState<User[]>([])
 
   const [messages, setMessages] = React.useState([
     {
