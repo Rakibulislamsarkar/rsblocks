@@ -30,11 +30,6 @@ export const docsConfig: DocsConfig = {
           items: [],
         },
         {
-          title: "Dark mode",
-          href: "/docs/dark-mode",
-          items: [],
-        },
-        {
           title: "Typography",
           href: "/docs/typography",
           items: [],
