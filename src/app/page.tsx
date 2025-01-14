@@ -1,8 +1,6 @@
 "use client";
 
 import { Heroes } from "@/components/blocks/heroes";
-import { Header } from "@/components/header";
-import { Hero } from "@/components/blocks/hero";
 import { Cases } from "@/components/blocks/cases";
 import { Testimonials } from "@/components/blocks/testimonials";
 import { Features } from "@/components/blocks/features";

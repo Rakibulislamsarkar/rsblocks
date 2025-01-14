@@ -6,20 +6,12 @@ import { ChevronRight, ExternalLink } from 'lucide-react'
 import Balancer from "react-wrap-balancer"
 
 import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-} from "@/components/ui/breadcrumb"
-import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { cn } from "@/lib/utils"
-import { Badge } from "@/components/ui/badge"
 import { DashboardTableOfContents } from "@/components/toc"
 
 const toc = {

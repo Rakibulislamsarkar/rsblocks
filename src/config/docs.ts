@@ -34,6 +34,11 @@ export const docsConfig: DocsConfig = {
           href: "/docs/dark-mode",
           items: [],
         },
+        {
+          title: "Typography",
+          href: "/docs/typography",
+          items: [],
+        },
       ],
     },
     {
