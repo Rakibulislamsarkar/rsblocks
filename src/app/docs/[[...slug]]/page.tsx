@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import { JSX } from 'react';
 
 interface DocPage {
   default: () => JSX.Element;
