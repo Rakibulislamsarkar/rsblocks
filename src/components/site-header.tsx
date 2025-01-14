@@ -1,12 +1,11 @@
-import Link from "next/link"
+import Link from "next/link";
 
-import { siteConfig } from "@/config/site"
-import {Command} from '@/components/ui/command'
-import { Icons } from "@/components/icons"
-import { MainNav } from "@/components/main-nav"
-import { MobileNav } from "@/components/mobile-nav"
-import { ModeSwitcher } from "@/components/mode-switcher"
-import { Button } from "@/components/ui/button"
+import { siteConfig } from "@/config/site";
+import { Icons } from "@/components/icons";
+import { MainNav } from "@/components/main-nav";
+import { MobileNav } from "@/components/mobile-nav";
+import { ModeSwitcher } from "@/components/mode-switcher";
+import { Button } from "@/components/ui/button";
 
 export function SiteHeader() {
   return (
@@ -16,9 +15,6 @@ export function SiteHeader() {
           <MainNav />
           <MobileNav />
           <div className="flex flex-1 items-center justify-between gap-2 md:justify-end">
-            <div className="w-full flex-1 md:w-auto md:flex-none">
-              <Command />
-            </div>
             <nav className="flex items-center gap-0.5">
               <Button variant="ghost" size="icon" className="h-8 w-8 px-0">
                 <Link
@@ -36,5 +32,5 @@ export function SiteHeader() {
         </div>
       </div>
     </header>
-  )
+  );
 }
