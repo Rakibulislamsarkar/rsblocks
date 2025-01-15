@@ -5,8 +5,8 @@ export const siteConfig = {
     description:
       "Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
     links: {
-      twitter: "https://twitter.com/shadcn",
-      github: "https://github.com/shadcn-ui/ui",
+      twitter: "https://x.com/Rakibul1019",
+      github: "https://github.com/Rakibulislamsarkar/rsblocks",
     },
   }
   

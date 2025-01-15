@@ -12,12 +12,20 @@ export const docsConfig: DocsConfig = {
       href: "/",
     },
     {
-      title: "Documentation",
+      title: "Introduction",
       href: "/docs",
     },
     {
       title: "Components",
-      href: "/docs/components",
+      href: "/docs/components/accordion",
+    },
+    {
+      title: "Themes",
+      href: "/themes",
+    },
+    {
+      title: "Colors",
+      href: "/colors",
     },
   ],
   sidebarNav: [

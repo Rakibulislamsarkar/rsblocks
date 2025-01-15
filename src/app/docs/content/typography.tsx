@@ -60,7 +60,12 @@ const faqData = [
   },
 ];
 
-export default function Documentation() {
+export const metadata = {
+  title: "Typography",
+  description: "Learn about our typography system and guidelines"
+};
+
+export default function TypograpgyPage() {
   return (
     <main className="px-6 lg:gap-10 lg:px-8">
       <div className="mx-auto w-full min-h-full max-w-3xl">

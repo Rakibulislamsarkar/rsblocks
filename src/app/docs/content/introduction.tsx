@@ -50,7 +50,12 @@ const faqData = [
   },
 ];
 
-export default function Documentation() {
+export const metadata = {
+  title: "Introduction",
+  description: "Get started with our documentation"
+};
+
+export default function IntroductionPage() {
   return (
     <main className="px-6 lg:gap-10 lg:px-8">
       <div className="mx-auto w-full min-h-full max-w-3xl ">
