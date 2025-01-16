@@ -19,6 +19,18 @@ const examples = [
     code: "https://github.com/shadcn/ui/tree/main/apps/www/app/(app)/examples/authentication",
     hidden: false,
   },
+  {
+    name: "Display Cards",
+    href: "/examples/cards",
+    code: "https://github.com/shadcn/ui/tree/main/apps/www/app/(app)/examples/authentication",
+    hidden: false,
+  },
+  {
+    name: "Feature",
+    href: "/examples/feature",
+    code: "https://github.com/shadcn/ui/tree/main/apps/www/app/(app)/examples/authentication",
+    hidden: false,
+  },
 ]
 
 interface ExamplesNavProps extends React.HTMLAttributes<HTMLDivElement> {}
