@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Update your Features",
 }
 
-export default function TestimonialsPage() {
+export default function FeaturessPage() {
   return <FeaturePage />
 }
 
