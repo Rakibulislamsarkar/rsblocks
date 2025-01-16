@@ -1,17 +1,6 @@
 "use client";
-
-import { Heroes } from "@/components/blocks/heroes";
-import { Cases } from "@/components/blocks/cases";
-import { Testimonials } from "@/components/blocks/testimonials";
-import { Features } from "@/components/blocks/features";
-import { Pricings } from "@/components/blocks/pricings";
-import { Stats } from "@/components/blocks/stats";
-import { CTAs } from "@/components/blocks/ctas";
-import { Blogs } from "@/components/blocks/blogs";
-import { FAQs } from "@/components/blocks/faqs";
-import { Contacts } from "@/components/blocks/contacts";
-import { Footers } from "@/components/blocks/footers";
-import { Headers } from "@/components/blocks/headers";
+import { ExamplesNav } from "@/components/examples-nav"
+import { CardsDemo } from "@/components/cards"
 import {
   PageActions,
   PageHeader,
@@ -20,6 +9,8 @@ import {
 } from "@/components/page-header";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
+
 
 export default function Home() {
   return (
@@ -39,18 +30,36 @@ export default function Home() {
           </Button>
         </PageActions>
       </PageHeader>
-      <Headers />
-      <Heroes />
-      <Cases />
-      <Testimonials />
-      <Features />
-      <Pricings />
-      <Stats />
-      <CTAs />
-      <Blogs />
-      <FAQs />
-      <Contacts />
-      <Footers />
+      <div className="border-grid border-b">
+        <div className="container-wrapper">
+          <div className="container py-4">
+            <ExamplesNav className="[&>a:first-child]:text-primary" />
+          </div>
+        </div>
+      </div>
+      <div className="container-wrapper">
+        <div className="container py-6">
+          <section className="overflow-hidden rounded-lg border bg-background shadow-md md:hidden md:shadow-xl">
+            <Image
+              src="/examples/cards-light.png"
+              width={1280}
+              height={1214}
+              alt="Cards"
+              className="block dark:hidden"
+            />
+            <Image
+              src="/examples/cards-dark.png"
+              width={1280}
+              height={1214}
+              alt="Cards"
+              className="hidden dark:block"
+            />
+          </section>
+          <section className="hidden md:block [&>div]:p-0">
+            <CardsDemo />
+          </section>
+        </div>
+      </div>
     </>
   );
 }
