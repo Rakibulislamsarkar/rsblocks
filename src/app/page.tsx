@@ -24,33 +24,33 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-        <PageHeader>
-          <PageHeaderHeading>Build your component library</PageHeaderHeading>
-          <PageHeaderDescription>
-            Beautifully designed components that you can copy and paste into
-            your apps. Made with Tailwind CSS. Open source.
-          </PageHeaderDescription>
-          <PageActions>
-            <Button asChild size="sm">
-              <Link href="/docs">Get Started</Link>
-            </Button>
-            <Button asChild size="sm" variant="ghost">
-              <Link href="/blocks">Browse Blocks</Link>
-            </Button>
-          </PageActions>
-        </PageHeader>
-        <Headers />
-        <Heroes />
-        <Cases />
-        <Testimonials />
-        <Features />
-        <Pricings />
-        <Stats />
-        <CTAs />
-        <Blogs />
-        <FAQs />
-        <Contacts />
-        <Footers />
+      <PageHeader>
+        <PageHeaderHeading>Create your component library</PageHeaderHeading>
+        <PageHeaderDescription>
+          You can copy and paste these finely designed components into your
+          projects. created using Tailwind CSS. Open source.
+        </PageHeaderDescription>
+        <PageActions>
+          <Button asChild size="sm">
+            <Link href="/docs">Get Started</Link>
+          </Button>
+          <Button asChild size="sm" variant="ghost">
+            <Link href="/blocks">Browse Blocks</Link>
+          </Button>
+        </PageActions>
+      </PageHeader>
+      <Headers />
+      <Heroes />
+      <Cases />
+      <Testimonials />
+      <Features />
+      <Pricings />
+      <Stats />
+      <CTAs />
+      <Blogs />
+      <FAQs />
+      <Contacts />
+      <Footers />
     </>
   );
 }
