@@ -1,4 +1,4 @@
-import { MainNavItem, SidebarNavItem } from "@/types/nav"
+import { MainNavItem, NavItemWithChildren, SidebarNavItem } from "@/types/nav"
 
 export interface DocsConfig {
   mainNav: MainNavItem[]
@@ -17,7 +17,7 @@ export const docsConfig: DocsConfig = {
     },
     {
       title: "Components",
-      href: "/docs/components/accordion",
+      href: "/docs/components/headers",
     },
     {
       title: "Themes",
@@ -107,3 +107,22 @@ export const docsConfig: DocsConfig = {
   ],
 }
 
+// Helper functions
+export function getFirstComponentRoute(): string {
+  const componentsSection = docsConfig.sidebarNav.find(
+    (section) => section.title === "Components"
+  )
+  return componentsSection?.items[0]?.href ?? "/docs/components/headers"
+}
+
+export function getComponentsConfig() {
+  return docsConfig.sidebarNav.find((section) => section.title === "Components")
+}
+
+export function getNavItemByHref(href: string): NavItemWithChildren | null {
+  for (const section of docsConfig.sidebarNav) {
+    const item = section.items.find((item) => item.href === href)
+    if (item) return item
+  }
+  return null
+}
