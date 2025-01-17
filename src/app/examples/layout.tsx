@@ -23,10 +23,10 @@ export default function ExamplesLayout({
   return (
     <>
       <PageHeader>
-        <PageHeaderHeading>Build your component library</PageHeaderHeading>
+        <PageHeaderHeading>Create your component library</PageHeaderHeading>
         <PageHeaderDescription>
-          Beautifully designed components that you can copy and paste into your
-          apps. Made with Tailwind CSS. Open source.
+        You can copy and paste these finely designed components into your
+        projects. created using Tailwind CSS. Open source.
         </PageHeaderDescription>
         <PageActions>
           <Button asChild size="sm">
